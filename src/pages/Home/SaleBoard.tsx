@@ -175,7 +175,7 @@ export default function SaleBoard({ saleIndex }: IProps) {
             <div className="flex items-center gap-4">
               <span className="text-gray-500 text-sm">Balance:</span>
               <span className="text-gray-100 text-base uppercase font-bold">
-                {address ? Number(ethBalanceData?.formatted).toFixed(FIXED_DECIMAL) : '- -'} ETH
+                {address && saleIndex > 0 && saleIndex < 3 ? Number(ethBalanceData?.formatted).toFixed(FIXED_DECIMAL) : '- -'} ETH
               </span>
             </div>
             <Button color="amber" className="text-base block md:hidden py-2">Buy</Button>
