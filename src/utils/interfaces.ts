@@ -12,6 +12,7 @@ export interface ISaleInfo {
   hardCap: number | string;
   priceInEth: number | string;
   personalCap?: Array<number>;
+  saleDuration?: string;
 }
 
 export interface IKeyToSaleInfo {

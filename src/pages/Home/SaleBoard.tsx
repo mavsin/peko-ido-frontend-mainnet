@@ -6,16 +6,18 @@ import { parseEther } from 'viem'
 import Input from "../../components/Input"
 import { CEIL_OF_ETH_AMOUNT_TO_PAY, CHAIN_ID, FIXED_DECIMAL, FLOOR_OF_ETH_AMOUNT_TO_PAY, IDO_CONTRACT_ABI, IDO_CONTRACT_ADDRESS, MSG_CONNECT_WALLET, MSG_SWITCH_NETWORK, REGEX_NUMBER_VALID } from '../../utils/constants'
 import api from '../../utils/api'
+import { ISaleInfo } from '../../utils/interfaces'
 
 //  ----------------------------------------------------------------------------------------
 
 interface IProps {
   saleIndex: number;
+  saleInfo: ISaleInfo;
 }
 
 //  ----------------------------------------------------------------------------------------
 
-export default function SaleBoard({ saleIndex }: IProps) {
+export default function SaleBoard({ saleIndex, saleInfo }: IProps) {
   const [amount, setAmount] = useState<string>('0')
   const [proof, setProof] = useState<Array<string>>([])
 
@@ -184,9 +186,9 @@ export default function SaleBoard({ saleIndex }: IProps) {
 
         {/* Sale ends in */}
         <div className="flex flex-col gap-2">
-          <h2 className="text-yellow-800 uppercase text-lg">Sale ends in</h2>
+          <h2 className="text-yellow-800 uppercase text-lg">Sale Duration:</h2>
           <p className="text-gray-100">
-
+            {saleInfo.saleDuration}
           </p>
         </div>
       </div>

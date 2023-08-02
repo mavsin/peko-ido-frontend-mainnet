@@ -164,7 +164,7 @@ export default function Home() {
                 <img src="/assets/images/logo.png" alt="Logo" className="w-40" />
               </div>
 
-              <SaleBoard saleIndex={saleIndex} />
+              <SaleBoard saleIndex={saleIndex} saleInfo={saleInfo} />
             </div>
 
             {/* Total raised */}

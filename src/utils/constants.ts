@@ -950,7 +950,8 @@ export const SALE_INFOS: Array<ISaleInfo> = [
     method: "Normal",
     hardCap: 53,
     priceInEth: 0,
-    personalCap: [0.01, 10]
+    personalCap: [0.01, 10],
+    saleDuration: "48 Hours"
   },
   {
     startAt: "2023-08-05T09:00:00",
@@ -958,7 +959,8 @@ export const SALE_INFOS: Array<ISaleInfo> = [
     saleType: "Public",
     method: "Overflow",
     hardCap: 65,
-    priceInEth: 0
+    priceInEth: 0,
+    saleDuration: "72 Hours"
   }
 ];
 
