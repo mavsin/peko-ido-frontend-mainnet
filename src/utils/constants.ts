@@ -14,7 +14,7 @@ export const SOCIAL_LINKS: Array<ISocialLink> = [
 ];
 export const REGEX_NUMBER_VALID = /^[0-9]*\.?[0-9]*$/;
 export const IDO_CONTRACT_ADDRESS =
-  "0x470473365a6cd046e8a2e561a2f5a96e921cbf66";
+  "0xe8dd786fd771779c6f530ba9ec6aa70fc0d543d1";
 export const IDO_CONTRACT_ABI = [
   {
     inputs: [
