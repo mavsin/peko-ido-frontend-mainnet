@@ -30,6 +30,8 @@ export default function Home() {
     watch: true
   })
 
+  console.log('>>>>>>>>>>>> walletAddressOfOwner => ', walletAddressOfOwner)
+
   //  Sale index that indicates sale type
   const { data: saleIndexInBigint } = useContractRead({
     address: IDO_CONTRACT_ADDRESS,

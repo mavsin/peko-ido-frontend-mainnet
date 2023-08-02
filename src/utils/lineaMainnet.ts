@@ -1,5 +1,7 @@
 import { Chain } from "wagmi";
 
+const RPC_URL = import.meta.env.VITE_RPC_URL || "https://rpc.linea.build";
+
 export const lineaMainnet = {
   id: 59144,
   name: "Linea Mainnet",
@@ -10,8 +12,8 @@ export const lineaMainnet = {
     symbol: "ETH"
   },
   rpcUrls: {
-    public: { http: ["https://linea-mainnet.infura.io/v3"] },
-    default: { http: ["https://linea-mainnet.infura.io/v3"] }
+    public: { http: [RPC_URL] },
+    default: { http: [RPC_URL] }
   },
   blockExplorers: {
     etherscan: { name: "Lineascan", url: "https://lineascan.build/" },
