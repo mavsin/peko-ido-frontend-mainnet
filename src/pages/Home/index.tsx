@@ -119,6 +119,15 @@ export default function Home() {
     return 0
   }, [scoreInBigint])
 
+  const totalRaisedInEth = useMemo<number>(() => {
+    if (saleIndex === 1) {
+      return privateTotalRaisedInEth
+    } else if (saleIndex === 2) {
+      return publicTotalRaisedInEth
+    }
+    return 0
+  }, [saleIndex, privateTotalRaisedInEth, publicTotalRaisedInEth])
+
   //  --------------------------------------------------------------------------
 
   useEffect(() => {
@@ -164,7 +173,7 @@ export default function Home() {
                 <img src="/assets/images/logo.png" alt="Logo" className="w-40" />
               </div>
 
-              <SaleBoard saleIndex={saleIndex} saleInfo={saleInfo} />
+              <SaleBoard saleIndex={saleIndex} saleInfo={saleInfo} totalRaisedInEth={totalRaisedInEth} />
             </div>
 
             {/* Total raised */}
@@ -172,7 +181,7 @@ export default function Home() {
               {/* title */}
               <div className="py-2 px-4 border-b-2 border-yellow-800">
                 <h2 className="text-yellow-800 text-lg">
-                  Total raised: <span className="uppercase">{saleIndex === 1 ? privateTotalRaisedInEth.toFixed(FIXED_DECIMAL) : saleIndex === 2 ? publicTotalRaisedInEth.toFixed(FIXED_DECIMAL) : '- -'} ETH</span>
+                  Total raised: <span className="uppercase">{saleIndex > 0 && saleIndex < 3 ? totalRaisedInEth.toFixed(FIXED_DECIMAL) : '- -'} ETH</span>
                 </h2>
               </div>
 

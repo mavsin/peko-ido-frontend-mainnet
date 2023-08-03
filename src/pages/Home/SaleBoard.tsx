@@ -13,11 +13,12 @@ import { ISaleInfo } from '../../utils/interfaces'
 interface IProps {
   saleIndex: number;
   saleInfo: ISaleInfo;
+  totalRaisedInEth: number;
 }
 
 //  ----------------------------------------------------------------------------------------
 
-export default function SaleBoard({ saleIndex, saleInfo }: IProps) {
+export default function SaleBoard({ saleIndex, saleInfo, totalRaisedInEth }: IProps) {
   const [amount, setAmount] = useState<string>('0')
   const [proof, setProof] = useState<Array<string>>([])
   const [errorMessage, setErrorMessage] = useState<string>('')
@@ -91,6 +92,9 @@ export default function SaleBoard({ saleIndex, saleInfo }: IProps) {
           if (Number(amount) >= FLOOR_OF_ETH_AMOUNT_TO_PAY && Number(amount) <= CEIL_OF_ETH_AMOUNT_TO_PAY) {
             if (buy) {
               buy()
+            } else if (totalRaisedInEth + Number(amount) > Number(saleInfo.hardCap)) {
+              console.log('>>>>>>>> totalRaisedInEth + Number(amount) => ', totalRaisedInEth + Number(amount))
+              toast.warn('Exceeds Hardcap.')
             } else {
               toast.warn(errorMessage)
             }
