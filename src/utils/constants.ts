@@ -954,13 +954,13 @@ export const SALE_INFOS: Array<ISaleInfo> = [
     saleDuration: "48 Hours"
   },
   {
-    startAt: "2023-08-05T09:00:00",
+    startAt: "2023-08-03T09:00:00",
     endAt: "2023-08-08T09:00:00",
     saleType: "Public",
     method: "Overflow",
     hardCap: 65,
     priceInEth: 0,
-    saleDuration: "72 Hours"
+    saleDuration: "120 Hours"
   }
 ];
 

@@ -142,7 +142,7 @@ export default function Home() {
       }
       setSaleInfo(_saleInfo)
     }
-  }, [saleIndex])
+  }, [saleIndex, priceOfPekoInEth])
 
   return (
     <Container>
